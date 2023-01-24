@@ -1,0 +1,23 @@
+name: "Detect Package Manager"
+description: "Detects yarn or npm package manager used"
+
+outputs:
+  manager:
+    description: "The package manager detected"
+    value: ${{ steps.detector.outputs.manager }}
+  command:
+    description: "The command used by the package manager to install packages"
+    value: ${{ steps.detector.outputs.command }}
+
+runs:
+  using: "composite"
+  steps:
+    - run: chmod +x ${{ github.action_path }}/detect-npm-yarn.sh
+      shell: bash
+    - id: detector
+      run: ${{ github.action_path }}/detect-npm-yarn.sh
+      shell: bash
+    - run: |
+        echo Detected package manager: ${{ steps.detector.outputs.manager }}
+        echo Using command: ${{ steps.detector.outputs.manager }} ${{ steps.detector.outputs.command }}
+      shell: bash
