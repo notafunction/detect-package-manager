@@ -1,0 +1,41 @@
+{
+  "name": "@notafunction/detect-package-manager",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Github action to detect which node package manager and install command",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "rm -rf dist && NODE_ENV=production webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/notafunction/detect-package-manager"
+  },
+  "keywords": [
+    "action",
+    "actions",
+    "github-action",
+    "github-actions",
+    "node",
+    "node-modules",
+    "npm",
+    "pnpm",
+    "yarn",
+    "install",
+    "dependency",
+    "dependencies"
+  ],
+  "author": "Matt Latham <github@mattlatham.dev>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/notafunction/detect-package-manager/issues"
+  },
+  "homepage": "https://github.com/notafunction/detect-package-manager#readme",
+  "dependencies": {
+    "@actions/core": "^1.10.0",
+    "detect-package-manager": "^2.0.1"
+  },
+  "devDependencies": {
+    "webpack": "^5.75.0"
+  }
+}
